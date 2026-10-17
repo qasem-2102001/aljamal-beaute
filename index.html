@@ -1,220 +1,160 @@
-<!doctype html>
+```html
+<!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#f8f0f3">
-  <meta name="description" content="Aljamal Beaute — اختيارات الجمال والعناية والتخسيس. تواصلي معنا لمعرفة التفاصيل.">
-  <title>Aljamal Beaute | جمالك يبدأ من هنا</title>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>ALJAMAL BEAUTY</title>
+
   <style>
-    :root {
-      --rose: #b85c78;
-      --rose-dark: #8f3f59;
-      --rose-pale: #f6e5eb;
-      --cream: #fffaf7;
-      --ink: #35252c;
-      --muted: #796a70;
-      --gold: #b79a63;
-      --white: #fff;
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
     }
-    * { box-sizing: border-box; }
-    html { scroll-behavior: smooth; }
+
     body {
-      margin: 0; color: var(--ink);
-      font-family: Tahoma, Arial, sans-serif;
-      background: var(--cream);
+      font-family: Arial, sans-serif;
+      min-height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background: linear-gradient(135deg, #fff7f9, #f4e7eb);
+      padding: 20px;
+    }
+
+    .container {
+      width: 100%;
+      max-width: 420px;
+      text-align: center;
+      background: #ffffff;
+      padding: 45px 25px;
+      border-radius: 24px;
+      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.10);
+    }
+
+    .brand {
+      font-size: 34px;
+      font-weight: bold;
+      letter-spacing: 2px;
+      color: #222;
+      margin-bottom: 14px;
+    }
+
+    .subtitle {
+      font-size: 17px;
+      color: #666;
       line-height: 1.8;
+      margin-bottom: 35px;
     }
-    a { color: inherit; }
-    .topline { height: 5px; background: linear-gradient(90deg, var(--gold), var(--rose), #e8bdca); }
-    header {
-      width: min(1120px, 92%); margin: auto; padding: 22px 0;
-      display: flex; align-items: center; justify-content: space-between; gap: 16px;
+
+    .buttons {
+      display: flex;
+      flex-direction: column;
+      gap: 16px;
     }
-    .brand { display: flex; align-items: center; gap: 12px; }
-    .mark {
-      width: 48px; height: 48px; display: grid; place-items: center;
-      border: 1px solid #d9b7c2; border-radius: 50%;
-      color: var(--rose-dark); font-family: Georgia, serif; font-size: 20px;
-      background: #fff;
+
+    .whatsapp-btn {
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      gap: 10px;
+      width: 100%;
+      padding: 16px;
+      background: #25D366;
+      color: #ffffff;
+      text-decoration: none;
+      border-radius: 14px;
+      font-size: 18px;
+      font-weight: bold;
+      transition: 0.25s ease;
+      box-shadow: 0 7px 18px rgba(37, 211, 102, 0.25);
     }
-    .brand-name { font-family: Georgia, "Times New Roman", serif; font-weight: 700; letter-spacing: .3px; font-size: 22px; direction: ltr; }
-    .brand-sub { color: var(--muted); font-size: 11px; letter-spacing: 2px; }
-    .header-link { text-decoration: none; font-size: 14px; color: var(--rose-dark); border-bottom: 1px solid #d8b1bf; padding-bottom: 3px; }
-    main { overflow: hidden; }
-    .hero {
-      width: min(1120px, 92%); margin: 12px auto 56px; border-radius: 30px;
-      background:
-        radial-gradient(circle at 12% 18%, rgba(255,255,255,.95), transparent 28%),
-        radial-gradient(circle at 90% 80%, rgba(228,184,199,.45), transparent 32%),
-        linear-gradient(130deg, #f7e8ed 0%, #fff8f5 52%, #f0d9e1 100%);
-      min-height: 440px; display: grid; grid-template-columns: 1.05fr .95fr;
-      align-items: center; padding: clamp(28px, 6vw, 70px); gap: 28px;
-      position: relative; isolation: isolate;
+
+    .whatsapp-btn:hover {
+      transform: translateY(-2px);
+      background: #20bd5a;
     }
-    .hero:after {
-      content: ""; position: absolute; width: 280px; height: 280px; border-radius: 50%;
-      border: 1px solid rgba(184,92,120,.22); left: -90px; bottom: -120px; z-index: -1;
+
+    .whatsapp-icon {
+      font-size: 22px;
     }
-    .eyebrow { color: var(--rose-dark); font-size: 12px; letter-spacing: 2.5px; font-weight: bold; }
-    h1 { margin: 12px 0 16px; font-size: clamp(32px, 4.3vw, 54px); line-height: 1.35; }
-    h1 span { color: var(--rose); }
-    .hero p { color: #68565e; max-width: 520px; margin: 0 0 26px; }
-    .actions { display: flex; flex-wrap: wrap; gap: 12px; align-items: center; }
-    .btn {
-      display: inline-flex; align-items: center; justify-content: center; gap: 8px;
-      text-decoration: none; border-radius: 999px; padding: 13px 24px; font-weight: bold;
-      transition: transform .2s, box-shadow .2s; cursor: pointer; border: 0; font-size: 15px;
+
+    .footer {
+      margin-top: 30px;
+      font-size: 13px;
+      color: #999;
     }
-    .btn:hover { transform: translateY(-2px); box-shadow: 0 9px 24px #8f3f5925; }
-    .btn-primary { background: var(--rose-dark); color: white; }
-    .btn-secondary { border: 1px solid #d7a9b8; color: var(--rose-dark); background: #ffffffa8; }
-    .visual { display: grid; place-items: center; min-height: 280px; }
-    .beauty-orb {
-      width: min(300px, 72vw); aspect-ratio: 1; border-radius: 50%;
-      background: linear-gradient(145deg, #fff 4%, #f5dce4 52%, #d9a7b8 100%);
-      box-shadow: inset -18px -20px 45px #9f526d18, 0 28px 65px #8b4a6120;
-      position: relative; display: grid; place-items: center; border: 1px solid #fff9;
-    }
-    .beauty-orb:before, .beauty-orb:after { content: ""; position: absolute; border: 1px solid #b88b6b80; border-radius: 50%; }
-    .beauty-orb:before { inset: 22px; }
-    .beauty-orb:after { inset: 36px; border-color: #fff9; }
-    .orb-text { text-align: center; position: relative; z-index: 1; }
-    .orb-text .monogram { font-family: Georgia, serif; font-size: 74px; line-height: 1.1; color: var(--rose-dark); }
-    .orb-text small { display: block; letter-spacing: 3px; font-family: Georgia, serif; color: #76515d; direction: ltr; }
-    section.content { width: min(1000px, 90%); margin: 0 auto 58px; }
-    .section-head { text-align: center; margin-bottom: 25px; }
-    .section-head h2 { font-size: clamp(24px, 3vw, 34px); margin: 4px 0; }
-    .section-head p { color: var(--muted); margin: 0; font-size: 14px; }
-    .cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
-    .card {
-      background: white; border: 1px solid #f0e1e6; border-radius: 20px;
-      padding: 24px 20px; text-align: center; box-shadow: 0 12px 35px #6b35420a;
-    }
-    .card-icon {
-      width: 58px; height: 58px; margin: 0 auto 12px; border-radius: 18px;
-      display: grid; place-items: center; font-size: 25px; color: var(--rose-dark);
-      background: var(--rose-pale);
-    }
-    .card h3 { margin: 6px 0; font-size: 18px; }
-    .card p { color: var(--muted); font-size: 14px; margin: 0; }
-    .contact {
-      width: min(1000px, 90%); margin: 0 auto 55px; padding: 35px 25px; text-align: center;
-      border-radius: 26px; background: #f5e4ea; border: 1px solid #ead0d9;
-    }
-    .contact h2 { margin: 0 0 7px; font-size: 27px; }
-    .contact p { color: #6f5962; margin: 0 0 20px; }
-    footer { text-align: center; color: #8a777f; font-size: 12px; padding: 22px 15px 30px; border-top: 1px solid #f0e3e7; }
-    .fineprint { font-size: 11px !important; color: #8a777f !important; margin-top: 14px !important; }
-    @media (max-width: 760px) {
-      header { padding: 16px 0; }
-      .brand-name { font-size: 19px; }
-      .header-link { font-size: 12px; }
-      .hero { grid-template-columns: 1fr; text-align: center; margin-top: 8px; padding: 32px 22px; gap: 10px; }
-      .hero p { margin-left: auto; margin-right: auto; }
-      .actions { justify-content: center; }
-      .visual { min-height: 220px; grid-row: 1; }
-      .beauty-orb { width: 210px; }
-      .orb-text .monogram { font-size: 60px; }
-      .cards { grid-template-columns: 1fr; }
-      section.content { margin-bottom: 42px; }
+
+    @media (max-width: 480px) {
+      .container {
+        padding: 38px 20px;
+      }
+
+      .brand {
+        font-size: 29px;
+      }
+
+      .subtitle {
+        font-size: 16px;
+      }
+
+      .whatsapp-btn {
+        font-size: 17px;
+      }
     }
   </style>
-
-  <!-- TikTok Pixel: بعد إنشاء Pixel من TikTok Events Manager، استبدل YOUR_TIKTOK_PIXEL_ID بمعرّفك. -->
-  <script>
-    (function () {
-      var pixelId = "YOUR_TIKTOK_PIXEL_ID";
-      if (!pixelId || pixelId === "YOUR_TIKTOK_PIXEL_ID") return;
-      !function (w, d, t) {
-        w.TiktokAnalyticsObject = t;
-        var ttq = w[t] = w[t] || [];
-        ttq.methods = ["page","track","identify","instances","debug","on","off","once","ready","alias","group","enableCookie","disableCookie","holdConsent","revokeConsent","grantConsent"];
-        ttq.setAndDefer = function (t, e) { t[e] = function () { t.push([e].concat(Array.prototype.slice.call(arguments, 0))) } };
-        for (var i = 0; i < ttq.methods.length; i++) ttq.setAndDefer(ttq, ttq.methods[i]);
-        ttq.instance = function (t) { var e = ttq._i[t] || []; for (var n = 0; n < ttq.methods.length; n++) ttq.setAndDefer(e, ttq.methods[n]); return e };
-        ttq.load = function (e, n) { var r = "https://analytics.tiktok.com/i18n/pixel/events.js", o = n && n.partner; ttq._i = ttq._i || {}; ttq._i[e] = []; ttq._i[e]._u = r; ttq._t = ttq._t || {}; ttq._t[e] = +new Date; ttq._o = ttq._o || {}; ttq._o[e] = n || {}; var s = document.createElement("script"); s.type = "text/javascript"; s.async = true; s.src = r + "?sdkid=" + e + "&lib=" + t; var a = document.getElementsByTagName("script")[0]; a.parentNode.insertBefore(s, a) };
-        ttq.load(pixelId);
-        ttq.page();
-      }(window, document, "ttq");
-    })();
-  </script>
 </head>
+
 <body>
-  <div class="topline"></div>
-  <header>
+
+  <div class="container">
+
     <div class="brand">
-      <div class="mark" aria-hidden="true">AB</div>
-      <div>
-        <div class="brand-name">Aljamal Beaute</div>
-        <div class="brand-sub">BEAUTY • CARE • CONFIDENCE</div>
-      </div>
+      ALJAMAL BEAUTY
     </div>
-    <a class="header-link" href="#contact">تواصلي معنا</a>
-  </header>
 
-  <main>
-    <section class="hero">
-      <div class="hero-copy">
-        <div class="eyebrow">YOUR BEAUTY, YOUR WAY</div>
-        <h1>جمالك يستحق<br><span>عناية مختلفة</span></h1>
-        <p>اكتشفي اختياراتنا في عالم الجمال والعناية والتخسيس، واسألينا عن التفاصيل المناسبة لاحتياجاتك بكل سهولة.</p>
-        <div class="actions">
-          <a class="btn btn-primary whatsapp-link" href="https://wa.me/970568060105?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D9%85%D9%85%D9%83%D9%86%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A3%D9%83%D8%AB%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%9F" target="_blank" rel="noopener">واتساب <span aria-hidden="true">↗</span></a>
-          <a class="btn btn-secondary" href="#categories">تعرّفي علينا</a>
-        </div>
-      </div>
-      <div class="visual" aria-label="شعار Aljamal Beaute">
-        <div class="beauty-orb">
-          <div class="orb-text"><div class="monogram">AB</div><small>ALJAMAL BEAUTE</small></div>
-        </div>
-      </div>
-    </section>
+    <div class="subtitle">
+      للطلب والاستفسار تواصل معنا مباشرة عبر واتساب
+    </div>
 
-    <section class="content" id="categories">
-      <div class="section-head">
-        <div class="eyebrow">A LITTLE CARE GOES A LONG WAY</div>
-        <h2>عناية تختارينها بثقة</h2>
-        <p>تصفّحي المجالات واسألينا عن المنتجات المتوفرة حاليًا.</p>
-      </div>
-      <div class="cards">
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">✧</div>
-          <h3>العناية بالبشرة</h3>
-          <p>خيارات للعناية اليومية ببشرتك وإضافة لمسة من الاهتمام لروتينك.</p>
-        </article>
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">❀</div>
-          <h3>الجمال والعناية</h3>
-          <p>منتجات مختارة لتكمّلي روتين جمالك بالطريقة اللي بتحبيها.</p>
-        </article>
-        <article class="card">
-          <div class="card-icon" aria-hidden="true">♡</div>
-          <h3>منتجات التخسيس</h3>
-          <p>اسألينا عن التفاصيل وطريقة الاستخدام والمعلومات الخاصة بكل منتج.</p>
-        </article>
-      </div>
-    </section>
+    <div class="buttons">
 
-    <section class="contact" id="contact">
-      <div class="eyebrow">WE'RE HERE FOR YOU</div>
-      <h2>بدك تعرفي أكثر؟</h2>
-      <p>ابعثيلنا على واتساب، وبنساعدك تعرفي التفاصيل والأسعار والمنتجات المتوفرة.</p>
-      <a class="btn btn-primary whatsapp-link" href="https://wa.me/970568060105?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%D8%8C%20%D9%85%D9%85%D9%83%D9%86%20%D8%AA%D9%81%D8%A7%D8%B5%D9%8A%D9%84%20%D8%A3%D9%83%D8%AB%D8%B1%20%D8%B9%D9%86%20%D8%A7%D9%84%D9%85%D9%86%D8%AA%D8%AC%D8%9F" target="_blank" rel="noopener">احكي معنا على واتساب <span aria-hidden="true">↗</span></a>
-      <p class="fineprint">المعلومات على هذه الصفحة للتعريف بالمتجر فقط. تختلف تفاصيل المنتجات ونتائج استخدامها حسب المنتج وطريقة الاستخدام.</p>
-    </section>
-  </main>
+      <a
+        class="whatsapp-btn"
+        href="https://wa.me/970568060105"
+        target="_blank"
+      >
+        <span class="whatsapp-icon">☎</span>
+        تواصل معنا على واتساب
+      </a>
 
-  <footer>© <span id="year"></span> Aljamal Beaute — جميع الحقوق محفوظة</footer>
-  <script>
-    document.getElementById("year").textContent = new Date().getFullYear();
-    document.querySelectorAll(".whatsapp-link").forEach(function (link) {
-      link.addEventListener("click", function () {
-        if (window.ttq && typeof window.ttq.track === "function") {
-          window.ttq.track("Contact");
-        }
-      });
-    });
-  </script>
+      <a
+        class="whatsapp-btn"
+        href="https://wa.me/970568060105"
+        target="_blank"
+      >
+        <span class="whatsapp-icon">☎</span>
+        تواصل معنا على واتساب
+      </a>
+
+      <a
+        class="whatsapp-btn"
+        href="https://wa.me/970568060105"
+        target="_blank"
+      >
+        <span class="whatsapp-icon">☎</span>
+        تواصل معنا على واتساب
+      </a>
+
+    </div>
+
+    <div class="footer">
+      ALJAMAL BEAUTY
+    </div>
+
+  </div>
+
 </body>
 </html>
+```

@@ -1,10 +1,9 @@
-```html
 <!DOCTYPE html>
 <html lang="ar" dir="rtl">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>ALJAMAL BEAUTY</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>ALJAMAL BEAUTY | تواصل معنا</title>
 
   <style>
     * {
@@ -14,147 +13,224 @@
     }
 
     body {
-      font-family: Arial, sans-serif;
+      font-family: Arial, Tahoma, sans-serif;
       min-height: 100vh;
-      display: flex;
-      justify-content: center;
-      align-items: center;
-      background: linear-gradient(135deg, #fff7f9, #f4e7eb);
-      padding: 20px;
+      color: #111;
+      overflow: hidden;
+      position: relative;
+      background:
+        linear-gradient(135deg, #fff8fb 0%, #fbeff4 35%, #f5e6ee 70%, #fffafc 100%);
     }
 
-    .container {
+    /* دوائر ناعمة بالخلفية */
+    body::before,
+    body::after {
+      content: "";
+      position: absolute;
+      border-radius: 50%;
+      filter: blur(70px);
+      z-index: 0;
+      opacity: 0.55;
+    }
+
+    body::before {
+      width: 280px;
+      height: 280px;
+      background: #f8c8dc;
+      top: -60px;
+      right: -60px;
+    }
+
+    body::after {
+      width: 320px;
+      height: 320px;
+      background: #f3d8c7;
+      bottom: -90px;
+      left: -90px;
+    }
+
+    .header {
       width: 100%;
-      max-width: 420px;
+      padding: 26px 20px;
       text-align: center;
-      background: #ffffff;
-      padding: 45px 25px;
-      border-radius: 24px;
-      box-shadow: 0 15px 40px rgba(0, 0, 0, 0.10);
+      border-bottom: 1px solid rgba(255,255,255,0.4);
+      position: relative;
+      z-index: 2;
+      backdrop-filter: blur(6px);
     }
 
-    .brand {
-      font-size: 34px;
-      font-weight: bold;
-      letter-spacing: 2px;
+    .logo {
+      font-size: 26px;
+      font-weight: 700;
+      letter-spacing: 3px;
       color: #222;
-      margin-bottom: 14px;
     }
 
-    .subtitle {
-      font-size: 17px;
-      color: #666;
+    .hero {
+      min-height: calc(100vh - 90px);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 40px 20px;
+      position: relative;
+      z-index: 2;
+    }
+
+    .content {
+      width: 100%;
+      max-width: 520px;
+      text-align: center;
+      background: rgba(255,255,255,0.55);
+      border: 1px solid rgba(255,255,255,0.6);
+      backdrop-filter: blur(12px);
+      border-radius: 22px;
+      padding: 40px 28px;
+      box-shadow: 0 12px 35px rgba(0,0,0,0.08);
+    }
+
+    .small-text {
+      font-size: 16px;
+      color: #6b5b63;
       line-height: 1.8;
-      margin-bottom: 35px;
+      margin-bottom: 25px;
+    }
+
+    h1 {
+      font-size: 34px;
+      font-weight: 700;
+      margin-bottom: 14px;
+      color: #1f1f1f;
+    }
+
+    .description {
+      font-size: 16px;
+      color: #6d6d6d;
+      margin-bottom: 30px;
     }
 
     .buttons {
       display: flex;
       flex-direction: column;
-      gap: 16px;
+      gap: 14px;
+      width: 100%;
+      max-width: 360px;
+      margin: auto;
     }
 
     .whatsapp-btn {
       display: flex;
-      justify-content: center;
       align-items: center;
+      justify-content: center;
       gap: 10px;
       width: 100%;
-      padding: 16px;
-      background: #25D366;
-      color: #ffffff;
+      padding: 16px 20px;
+      background: linear-gradient(135deg, #25D366, #1fb85a);
+      color: #fff;
+      font-size: 16px;
+      font-weight: 700;
       text-decoration: none;
-      border-radius: 14px;
-      font-size: 18px;
-      font-weight: bold;
+      border-radius: 12px;
       transition: 0.25s ease;
-      box-shadow: 0 7px 18px rgba(37, 211, 102, 0.25);
+      box-shadow: 0 8px 20px rgba(37, 211, 102, 0.28);
     }
 
     .whatsapp-btn:hover {
-      transform: translateY(-2px);
-      background: #20bd5a;
+      transform: translateY(-2px) scale(1.01);
+      box-shadow: 0 12px 24px rgba(37, 211, 102, 0.35);
     }
 
     .whatsapp-icon {
-      font-size: 22px;
+      width: 22px;
+      height: 22px;
+      fill: white;
     }
 
-    .footer {
-      margin-top: 30px;
-      font-size: 13px;
-      color: #999;
+    .customer-service {
+      margin-top: 24px;
+      color: #7b6c74;
+      font-size: 14px;
     }
 
-    @media (max-width: 480px) {
-      .container {
-        padding: 38px 20px;
+    @media (max-width: 600px) {
+      .logo {
+        font-size: 22px;
       }
 
-      .brand {
-        font-size: 29px;
+      .content {
+        padding: 32px 20px;
       }
 
-      .subtitle {
-        font-size: 16px;
+      h1 {
+        font-size: 28px;
+      }
+
+      .small-text,
+      .description {
+        font-size: 15px;
       }
 
       .whatsapp-btn {
-        font-size: 17px;
+        padding: 15px;
+        font-size: 15px;
       }
     }
   </style>
 </head>
-
 <body>
 
-  <div class="container">
+  <header class="header">
+    <div class="logo">ALJAMAL BEAUTY</div>
+  </header>
 
-    <div class="brand">
-      ALJAMAL BEAUTY
+  <main class="hero">
+    <div class="content">
+
+      <p class="small-text">
+        تواصل معنا مباشرة<br>
+        وسنساعدك بكل التفاصيل
+      </p>
+
+      <h1>هل تريد معرفة المزيد؟</h1>
+
+      <p class="description">
+        اضغط هنا للتواصل معنا مباشرة عبر واتساب
+      </p>
+
+      <div class="buttons">
+
+        <a class="whatsapp-btn"
+           href="https://wa.me/970568060105?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D8%B4%D8%A7%D9%87%D8%AF%D8%AA%20%D8%A5%D8%B9%D9%84%D8%A7%D9%86%D9%83%D9%85%20,%D9%88%D8%A3%D9%88%D8%AF%20%D9%85%D8%B9%D8%B1%D9%81%D8%A9%20%D8%A7%D9%84%D9%85%D8%B2%D9%8A%D8%AF"
+           target="_blank">
+          <svg class="whatsapp-icon" viewBox="0 0 32 32">
+            <path d="M16.04 3C9.39 3 4 8.25 4 14.73c0 2.28.67 4.5 1.94 6.39L4 29l8.1-1.9a12.3 12.3 0 0 0 3.94.65h.01C22.7 27.75 28 22.5 28 16.02 28 9.54 22.7 3 16.04 3zm0 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-4.81 1.13 1.28-4.55-.24-.37a9.57 9.57 0 0 1-1.51-5.17c0-5.27 4.4-9.56 9.82-9.56 2.62 0 5.09 1 6.94 2.81a9.41 9.41 0 0 1 2.88 6.75c0 5.27-4.4 9.55-9.95 9.55zm5.39-7.16c-.3-.14-1.75-.84-2.02-.94-.27-.1-.47-.14-.67.14-.2.29-.77.94-.94 1.13-.17.19-.35.22-.64.07-.3-.14-1.25-.45-2.38-1.43-.88-.76-1.47-1.7-1.64-1.99-.17-.29-.02-.44.13-.58.13-.13.3-.34.44-.5.15-.17.2-.29.3-.48.1-.19.05-.36-.02-.5-.08-.15-.67-1.57-.92-2.15-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.36-.27.29-1.04 1-1.04 2.43 0 1.43 1.07 2.82 1.22 3.01.15.19 2.11 3.14 5.11 4.4.71.3 1.27.48 1.7.62.72.22 1.37.19 1.88.12.57-.08 1.75-.7 2-1.37.25-.67.25-1.24.17-1.36-.07-.12-.27-.19-.57-.33z"/>
+          </svg>
+          تواصل معنا على واتساب
+        </a>
+
+        <a class="whatsapp-btn"
+           href="https://wa.me/970568060105?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D8%B4%D8%A7%D9%87%D8%AF%D8%AA%20%D8%A5%D8%B9%D9%84%D8%A7%D9%86%D9%83%D9%85%20,%D9%88%D8%A3%D9%88%D8%AF%20%D9%85%D8%B9%D8%B1%D9%81%D8%A9%20%D8%A7%D9%84%D9%85%D8%B2%D9%8A%D8%AF"
+           target="_blank">
+          <svg class="whatsapp-icon" viewBox="0 0 32 32">
+            <path d="M16.04 3C9.39 3 4 8.25 4 14.73c0 2.28.67 4.5 1.94 6.39L4 29l8.1-1.9a12.3 12.3 0 0 0 3.94.65h.01C22.7 27.75 28 22.5 28 16.02 28 9.54 22.7 3 16.04 3zm0 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-4.81 1.13 1.28-4.55-.24-.37a9.57 9.57 0 0 1-1.51-5.17c0-5.27 4.4-9.56 9.82-9.56 2.62 0 5.09 1 6.94 2.81a9.41 9.41 0 0 1 2.88 6.75c0 5.27-4.4 9.55-9.95 9.55zm5.39-7.16c-.3-.14-1.75-.84-2.02-.94-.27-.1-.47-.14-.67.14-.2.29-.77.94-.94 1.13-.17.19-.35.22-.64.07-.3-.14-1.25-.45-2.38-1.43-.88-.76-1.47-1.7-1.64-1.99-.17-.29-.02-.44.13-.58.13-.13.3-.34.44-.5.15-.17.2-.29.3-.48.1-.19.05-.36-.02-.5-.08-.15-.67-1.57-.92-2.15-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.36-.27.29-1.04 1-1.04 2.43 0 1.43 1.07 2.82 1.22 3.01.15.19 2.11 3.14 5.11 4.4.71.3 1.27.48 1.7.62.72.22 1.37.19 1.88.12.57-.08 1.75-.7 2-1.37.25-.67.25-1.24.17-1.36-.07-.12-.27-.19-.57-.33z"/>
+          </svg>
+          تواصل معنا على واتساب
+        </a>
+
+        <a class="whatsapp-btn"
+           href="https://wa.me/970568060105?text=%D9%85%D8%B1%D8%AD%D8%A8%D8%A7%20%D8%B4%D8%A7%D9%87%D8%AF%D8%AA%20%D8%A5%D8%B9%D9%84%D8%A7%D9%86%D9%83%D9%85%20,%D9%88%D8%A3%D9%88%D8%AF%20%D9%85%D8%B9%D8%B1%D9%81%D8%A9%20%D8%A7%D9%84%D9%85%D8%B2%D9%8A%D8%AF"
+           target="_blank">
+          <svg class="whatsapp-icon" viewBox="0 0 32 32">
+            <path d="M16.04 3C9.39 3 4 8.25 4 14.73c0 2.28.67 4.5 1.94 6.39L4 29l8.1-1.9a12.3 12.3 0 0 0 3.94.65h.01C22.7 27.75 28 22.5 28 16.02 28 9.54 22.7 3 16.04 3zm0 21.8h-.01a9.9 9.9 0 0 1-5.04-1.38l-.36-.21-4.81 1.13 1.28-4.55-.24-.37a9.57 9.57 0 0 1-1.51-5.17c0-5.27 4.4-9.56 9.82-9.56 2.62 0 5.09 1 6.94 2.81a9.41 9.41 0 0 1 2.88 6.75c0 5.27-4.4 9.55-9.95 9.55zm5.39-7.16c-.3-.14-1.75-.84-2.02-.94-.27-.1-.47-.14-.67.14-.2.29-.77.94-.94 1.13-.17.19-.35.22-.64.07-.3-.14-1.25-.45-2.38-1.43-.88-.76-1.47-1.7-1.64-1.99-.17-.29-.02-.44.13-.58.13-.13.3-.34.44-.5.15-.17.2-.29.3-.48.1-.19.05-.36-.02-.5-.08-.15-.67-1.57-.92-2.15-.24-.58-.49-.5-.67-.51h-.57c-.2 0-.52.07-.79.36-.27.29-1.04 1-1.04 2.43 0 1.43 1.07 2.82 1.22 3.01.15.19 2.11 3.14 5.11 4.4.71.3 1.27.48 1.7.62.72.22 1.37.19 1.88.12.57-.08 1.75-.7 2-1.37.25-.67.25-1.24.17-1.36-.07-.12-.27-.19-.57-.33z"/>
+          </svg>
+          تواصل معنا على واتساب
+        </a>
+
+      </div>
+
+      <p class="customer-service">خدمة العملاء متاحة عبر واتساب</p>
+
     </div>
-
-    <div class="subtitle">
-      للطلب والاستفسار تواصل معنا مباشرة عبر واتساب
-    </div>
-
-    <div class="buttons">
-
-      <a
-        class="whatsapp-btn"
-        href="https://wa.me/970568060105"
-        target="_blank"
-      >
-        <span class="whatsapp-icon">☎</span>
-        تواصل معنا على واتساب
-      </a>
-
-      <a
-        class="whatsapp-btn"
-        href="https://wa.me/970568060105"
-        target="_blank"
-      >
-        <span class="whatsapp-icon">☎</span>
-        تواصل معنا على واتساب
-      </a>
-
-      <a
-        class="whatsapp-btn"
-        href="https://wa.me/970568060105"
-        target="_blank"
-      >
-        <span class="whatsapp-icon">☎</span>
-        تواصل معنا على واتساب
-      </a>
-
-    </div>
-
-    <div class="footer">
-      ALJAMAL BEAUTY
-    </div>
-
-  </div>
+  </main>
 
 </body>
 </html>
-```
